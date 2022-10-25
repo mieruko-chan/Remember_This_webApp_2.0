@@ -6,11 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="stylesheet.css" />
-    <style>
+    <style type="text/css">
       * {
         margin: 0;
         padding: 0;
-        box-sizing: 0;
+        box-sizing: border-box;
+        /*scroll-behavior: smooth;*/
+      }
+      html {
         scroll-behavior: smooth;
       }
       body {
@@ -23,6 +26,30 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        color: #fff;
+        font-size: 100px;
+      }
+
+      /* https://www.w3schools.com/cssref/sel_nth-child.php */
+      section:nth-child(even) {
+        background-color: #fff;
+        color: #000;
+      }
+      .scrollTop {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        padding: 10px 15px;
+        background-color: #000;
+        color: #fff;
+        border-radius: 5px;
+        border-radius: 1px solid #fff;
+        cursor: pointer;
+        transition: all 0.5s ease 0s;
+      }
+      .scrollTop:hover {
+        background-color: #f7f7f7;
+        color: #000;
       }
     </style>
   </head>
@@ -32,6 +59,17 @@
     <section>Three</section>
     <section>Four</section>
     <section>Five</section>
-    <div onclick="scrollToTop()" class="scrollToTop">Top</div>
+
+    <div class="scrollTop">
+      <a href="#section1">Top</a>
+    </div>
+
+    <div class="main" id="section1"></div>
+
+    <script>
+      /*   function scrollToTop() {
+        window.scrollTo(0, 0);
+      }*/
+    </script>
   </body>
 </html>
